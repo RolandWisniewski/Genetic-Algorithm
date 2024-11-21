@@ -54,9 +54,7 @@ def mutate(offspring, MUT_RATE):
     for arr in offspring:
         mutation_mask = np.random.rand(*arr.shape) < MUT_RATE
         noise = np.random.randint(-15, 16, size=arr.shape)
-        arr[mutation_mask] = np.clip(arr[mutation_mask] 
-                                     + noise[mutation_mask], 
-                                     0, 255)
+        arr[mutation_mask] = np.clip(arr[mutation_mask] + noise[mutation_mask], 0, 255)
     return offspring
 
 
@@ -78,8 +76,7 @@ def replace(new_gen, population, POP_SIZE, TARGET):
 def plot_best_individual(best_individual, generation, current_best_fitness):
     plt.imshow(best_individual, cmap='gray')
     plt.suptitle(f'Best individual - Generation {generation}')
-    plt.title(f'Fitness: {current_best_fitness}', 
-              color="grey", style='italic')
+    plt.title(f'Fitness: {current_best_fitness}', color="grey", style='italic')
     plt.axis('off')
     plt.draw()
     plt.pause(0.1)
@@ -135,8 +132,7 @@ def main(loc='face.png', POP_SIZE=1000, MUT_RATE=0.01, MAX_GENERATION=1000):
         selected = selection(population, POP_SIZE)
         offspring = crossover(selected, population, POP_SIZE)
         mutated_offspring = mutate(offspring, MUT_RATE)
-        population = replace(mutated_offspring, population, 
-                             POP_SIZE, TARGET)
+        population = replace(mutated_offspring, population, POP_SIZE, TARGET)
         best_individual = min(population, key=lambda x: x[1])
         current_best_fitness = best_individual[1]
         fitness_history.append(current_best_fitness)
@@ -147,9 +143,7 @@ def main(loc='face.png', POP_SIZE=1000, MUT_RATE=0.01, MAX_GENERATION=1000):
             stagnation_count += 1
         MUT_RATE = adaptive_mutation_rate(stagnation_count)
         if generation % 100 == 0 or current_best_fitness == 0:
-            plot_best_individual(best_individual[0], 
-                                 generation, 
-                                 current_best_fitness)
+            plot_best_individual(best_individual[0], generation, current_best_fitness)
         end = time.time() - start
         total_time += end
         current_perecent = generation*100/MAX_GENERATION
@@ -157,6 +151,7 @@ def main(loc='face.png', POP_SIZE=1000, MUT_RATE=0.01, MAX_GENERATION=1000):
         clear_line(6)
         if current_best_fitness == 0: break
         generation += 1
+        
     print_progress(generation, current_best_fitness, total_time, current_perecent)
     plt.ioff()
     plt.show()
