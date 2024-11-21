@@ -102,5 +102,5 @@ Contributions are welcome! If you have ideas for optimization or new features, f
 
 ## Author
 
-Roland Wiśniewski__
+Roland Wiśniewski\
 GitHub: [RolandWisniewski](https://github.com/RolandWisniewski)
