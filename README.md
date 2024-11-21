@@ -12,20 +12,20 @@ This project implements a genetic algorithm to approximate a grayscale image usi
 
 ## How It Works
 
-1. Initialization:
+- Initialization:
   * A target image is loaded and converted to grayscale.
   * The population is initialized with random pixel values (0–255).
-2. Fitness Calculation:
+- Fitness Calculation:
   * Fitness is calculated as the sum of absolute differences between the target and candidate image.
-3. Selection:
+- Selection:
   * The top 50% of the population is selected for breeding.
-4. Crossover:
+- Crossover:
   * Parents are combined using a mask-based crossover, producing offspring by mixing pixel regions.
-5. Mutation:
+- Mutation:
   * Small random noise is added to some pixels, simulating mutations. Values are clamped between 0 and 255.
-6. Replacement:
+- Replacement:
   * The population is replaced with the best individuals from the offspring and current population, ensuring elitism.
-7. Termination:
+- Termination:
   * The algorithm stops when the fitness reaches 0 or after the maximum number of generations is reached.
 
 ## Requirements
@@ -59,20 +59,20 @@ main(loc='path/to/image.png', POP_SIZE=500, MUT_RATE=0.05, MAX_GENERATION=2000)
 
 ## Program Flow
 
-1. Start the program. A target image (`dog.jpg` by default) is loaded.
-2. The algorithm begins evolving a population to approximate the target image.
-3. Progress is displayed in the console:
+- Start the program. A target image (`dog.jpg` by default) is loaded.
+- The algorithm begins evolving a population to approximate the target image.
+- Progress is displayed in the console:
   * Current generation
   * Best fitness
   * Total elapsed time
   * Progress bar
-4. The best individual's progress is plotted every 100 generations.
-5. Upon completion (or interruption with `Ctrl+C`), the fitness history is plotted, showing how fitness improved over generations.
+- The best individual's progress is plotted every 100 generations.
+- Upon completion (or interruption with `Ctrl+C`), the fitness history is plotted, showing how fitness improved over generations.
 
 ## Example Output
 
 ### Progress Display:
-```bash
+```
 Generation: 100
 Fitness: 4321
 Total time: 15.203 [s]
@@ -82,6 +82,7 @@ Press Ctrl+C to force exit.
 ```
 ### Generated Image:
 The algorithm displays the best individual for the final generation.
+
 ![Figure1](https://github.com/user-attachments/assets/d931bb39-3b06-464b-8bfe-b2154e4554fe)
 ### Fitness Progress Plot:
 ![Figure2](https://github.com/user-attachments/assets/d08987b5-9287-4fea-b7c4-d54943abcef6)
