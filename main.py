@@ -112,10 +112,10 @@ def print_progress(generation, current_best_fitness, total_time, current_perecen
         print(f"|{'❚'*20}| 100%")
     else:
         print(f"|{'❚' * int(current_perecent / 5)}{' ' * (20 - int(current_perecent / 5))}| {current_perecent:.1f}%")
-    print('\n Press Ctrl+C to force exit.')
+    print('\nPress Ctrl+C to force exit.')
 
 
-def main(loc='face.png', POP_SIZE=1000, MUT_RATE=0.01, MAX_GENERATION=1000):
+def main(loc='dog.jpg', POP_SIZE=1000, MUT_RATE=0.01, MAX_GENERATION=1000):
     fitness_history = []
     generation = 0
     stagnation_count = 0
