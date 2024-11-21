@@ -12,21 +12,21 @@ This project implements a genetic algorithm to approximate a grayscale image usi
 
 ## How It Works
 
-- Initialization:
-  * A target image is loaded and converted to grayscale.
-  * The population is initialized with random pixel values (0–255).
-- Fitness Calculation:
-  * Fitness is calculated as the sum of absolute differences between the target and candidate image.
-- Selection:
-  * The top 50% of the population is selected for breeding.
-- Crossover:
-  * Parents are combined using a mask-based crossover, producing offspring by mixing pixel regions.
-- Mutation:
-  * Small random noise is added to some pixels, simulating mutations. Values are clamped between 0 and 255.
-- Replacement:
-  * The population is replaced with the best individuals from the offspring and current population, ensuring elitism.
-- Termination:
-  * The algorithm stops when the fitness reaches 0 or after the maximum number of generations is reached.
+1. Initialization:
+  - A target image is loaded and converted to grayscale.
+  - The population is initialized with random pixel values (0–255).
+2. Fitness Calculation:
+  - Fitness is calculated as the sum of absolute differences between the target and candidate image.
+3. Selection:
+  - The top 50% of the population is selected for breeding.
+4. Crossover:
+  - Parents are combined using a mask-based crossover, producing offspring by mixing pixel regions.
+5. Mutation:
+  - Small random noise is added to some pixels, simulating mutations. Values are clamped between 0 and 255.
+6. Replacement:
+  - The population is replaced with the best individuals from the offspring and current population, ensuring elitism.
+7. Termination:
+  - The algorithm stops when the fitness reaches 0 or after the maximum number of generations is reached.
 
 ## Requirements
 
@@ -59,15 +59,15 @@ main(loc='path/to/image.png', POP_SIZE=500, MUT_RATE=0.05, MAX_GENERATION=2000)
 
 ## Program Flow
 
-- Start the program. A target image (`dog.jpg` by default) is loaded.
-- The algorithm begins evolving a population to approximate the target image.
-- Progress is displayed in the console:
-  * Current generation
-  * Best fitness
-  * Total elapsed time
-  * Progress bar
-- The best individual's progress is plotted every 100 generations.
-- Upon completion (or interruption with `Ctrl+C`), the fitness history is plotted, showing how fitness improved over generations.
+1. Start the program. A target image (`dog.jpg` by default) is loaded.
+2. The algorithm begins evolving a population to approximate the target image.
+3. Progress is displayed in the console:
+  - Current generation
+  - Best fitness
+  - Total elapsed time
+  - Progress bar
+4. The best individual's progress is plotted every 100 generations.
+5. Upon completion (or interruption with `Ctrl+C`), the fitness history is plotted, showing how fitness improved over generations.
 
 ## Example Output
 
@@ -102,5 +102,5 @@ Contributions are welcome! If you have ideas for optimization or new features, f
 
 ## Author
 
-Roland Wiśniewski
+Roland Wiśniewski__
 GitHub: [RolandWisniewski](https://github.com/RolandWisniewski)
