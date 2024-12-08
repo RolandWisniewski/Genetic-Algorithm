@@ -13,20 +13,20 @@ This project implements a genetic algorithm to approximate a grayscale image usi
 ## 🧩 How It Works
 
 1. Initialization:
-  - A target image is loaded and converted to grayscale.
-  - The population is initialized with random pixel values (0–255).
+    - A target image is loaded and converted to grayscale.
+    - The population is initialized with random pixel values (0–255).
 2. Fitness Calculation:
-  - Fitness is calculated as the sum of absolute differences between the target and candidate image.
+    - Fitness is calculated as the sum of absolute differences between the target and candidate image.
 3. Selection:
-  - The top 50% of the population is selected for breeding.
+    - The top 50% of the population is selected for breeding.
 4. Crossover:
-  - Parents are combined using a mask-based crossover, producing offspring by mixing pixel regions.
+    - Parents are combined using a mask-based crossover, producing offspring by mixing pixel regions.
 5. Mutation:
-  - Small random noise is added to some pixels, simulating mutations. Values are clamped between 0 and 255.
+    - Small random noise is added to some pixels, simulating mutations. Values are clamped between 0 and 255.
 6. Replacement:
-  - The population is replaced with the best individuals from the offspring and current population, ensuring elitism.
+    - The population is replaced with the best individuals from the offspring and current population, ensuring elitism.
 7. Termination:
-  - The algorithm stops when the fitness reaches 0 or after the maximum number of generations is reached.
+    - The algorithm stops when the fitness reaches 0 or after the maximum number of generations is reached.
 
 ## 📦 Requirements
 
@@ -35,6 +35,7 @@ This project implements a genetic algorithm to approximate a grayscale image usi
   * `numpy`
   * `opencv-python`
   * `matplotlib`
+
 You can install the dependencies using pip:
 ```bash
 pip install numpy opencv-python matplotlib
