@@ -63,10 +63,10 @@ main(loc='path/to/image.png', POP_SIZE=500, MUT_RATE=0.05, MAX_GENERATION=2000)
 1. Start the program. A target image (`dog.jpg` by default) is loaded.
 2. The algorithm begins evolving a population to approximate the target image.
 3. Progress is displayed in the console:
-  - Current generation
-  - Best fitness
-  - Total elapsed time
-  - Progress bar
+      - Current generation
+      - Best fitness
+      - Total elapsed time
+      - Progress bar
 4. The best individual's progress is plotted every 100 generations.
 5. Upon completion (or interruption with `Ctrl+C`), the fitness history is plotted, showing how fitness improved over generations.
 
